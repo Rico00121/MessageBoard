@@ -1,0 +1,285 @@
+body, header, nav, main, footer, h1, div, img, ul, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+	background-color: rgba(45, 216, 216, 0.445);
+}
+
+strong{
+    font-size: 1.25em;
+}
+
+h2{
+    text-align: center;
+}
+
+h6{
+    text-align: right;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.frame {
+    position: relative;
+    max-width: 450px;
+    margin: 10% auto;
+    text-align: center;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    top: 0;
+    background-color: #000;
+    float: left;
+    padding-bottom: 0;
+}
+
+header img {
+    margin: 0 auto;
+}
+
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    
+}
+
+nav li {
+    
+    font-size: 2em;
+    font-family: times, "Times New Roman";
+    border-top: 1px solid #fff;
+}
+
+
+nav li a {
+    display: block;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+main {
+    background-color: #fff;
+    padding: 2%;
+    font-size: 1.15em;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+
+fieldset legend {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+
+footer p {
+    font-size: 0.75em;
+    text-align: center;
+    color: #fff;
+    padding: 0 1em;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: rgb(168, 161, 161) 5px 5px 10px 5px ;
+    background-color: #ffffff;
+    border-width: 0px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 2%;
+    border-top: 0;
+    border-bottom:0;
+    border-left:0;
+
+}
+
+/* .base h6{
+    vertical-align:bottom;
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+}
+
+form {
+    width: 1000px;
+    background: #fff;
+    padding: 15px 40px 40px;
+    border: 1px solid #ccc;
+    margin: 50px auto 0;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px
+}
+
+label i {
+    color: #999;
+    font-size: 80%;
+}
+
+input, textarea {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.row {
+    padding-bottom: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 90%;
+}
+input[type="submit"] {
+    font-size: 110%;
+    font-weight: 100;
+    background: #006dcc;
+    border-color: #016BC1;
+    box-shadow: 0 3px 0 #0165b6;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: #0165b6;
+}
+
+
+/* Media Query for Tablet Viewport */
+ @media screen and (min-width: 630px), print {
+    nav li {
+        border-top: none;
+        display: inline-block;
+        border-right: 1px solid #fff;
+    }
+    
+    nav li:last-child {
+        border-right: none;
+    }
+    
+    nav li a {
+        padding: 0.1em 0.75em;
+    }
+    
+    main ul {
+        margin: 0 0 4% 10%;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+
+    table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 100%;
+        border-width: 0;
+    }
+    
+    caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 1%;
+    }
+    
+    
+    
+    th {
+        background-color: #000;
+        color: #fff;
+        font-size: 1.15em;
+    }
+
+    tr:nth-child(odd) {
+        background-color: rgb(241, 241, 241);
+    }
+    
+    
+} 
+
+/* Media Query for Desktop Viewport */
+ @media screen and (min-width: 1015px), print {
+
+    nav {
+        float: right;
+        width: 70%;
+        margin: 4em 1em 0 0;
+    }
+
+    nav ul {
+        text-align: right;
+    }
+
+    nav li {
+        border: none;
+    }
+
+    nav li a {
+        padding: 0.5em 1em;
+    }
+
+    main {
+        clear: left;
+    }
+
+    main h1 {
+        font-size: 1.8em;
+    }
+
+} 
+
+/* Media Query for Large Desktop Viewports */
+ @media screen and (min-width: 1921px) {
+    #container {
+        width: 1920px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 80%;
+    }
+
+} 
+
+/* Media Query for Print */
+@media print {
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+

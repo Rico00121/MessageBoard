@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" sizes="192*192" href="/images/logo.ico">
+</head>
+<body>
+    <div id="container">
+
+		<!-- Use the header area for the website name or logo -->
+		<header>
+			<a th:href="@{/}"><img src="/images/logo.ico" alt="Message board logo" height="220" width="330"></a>
+		</header>
+
+		<!-- Use the nav area to add hyperlinks to other pages within the website -->
+		<nav>
+			<ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/list}">Message list</a></li>
+                <li><a th:href="@{/add}">Add a new message</a></li>
+            </ul>
+		</nav>
+
+		<!-- Use the main area to add the main content of the webpage -->
+		<main>
+
+
+            <div class="grid">
+
+                <figure class="frame">
+                        <a th:href="@{/list}"><img src="/images/list.jpg" alt="list"></a>
+                        <figcaption class="pic-text">Message list</figcaption>
+                </figure>
+
+                <figure class="frame">
+                        <a th:href="@{/add}"><img src="/images/board.jpg" alt="add a new message"></a>
+                        <figcaption class="pic-text">Add a new message</figcaption>
+                </figure>
+
+            </div>
+		</main>
+
+		<!-- Use the footer area to add webpage footer content -->
+		<footer>
+			<p>&copy; Copyright 2021. All Rights Reserved.</p>
+			<p><a href="mailto:Two_and_A_Half_Men@club.net">Two_and_A_Half_Men@club.net</a></p>
+		</footer>
+
+	</div>
+</body>
+</html>
