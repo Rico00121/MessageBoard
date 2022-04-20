@@ -69,6 +69,14 @@ nav li a {
     padding: 0.5em 1em;
     text-decoration: none;
 }
+.searchdiv{
+    float:left;
+}
+.search{
+    width: 500px;
+    display: flex;
+    border-radius: 5px;
+}
 
 main {
     background-color: #fff;

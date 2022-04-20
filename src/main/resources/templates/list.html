@@ -19,6 +19,21 @@
 		<!-- Use the nav area to add hyperlinks to other pages within the website -->
 		<nav>
 			<ul>
+                <li style="float: left;">
+                    <form class="search" name="messageForm" onsubmit="" th:action="@{/search}" method="post">
+                        <div>
+                            <label for="title">Message title:</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div>
+                            <label for="content">Content:</label>
+                            <input type="text" name="content" id="content">
+                        </div>
+                        <div>
+                            <input type="submit" id="submit" value="Search">
+                        </div>
+                    </form>
+                </li>
                 <li><a th:href="@{/}">Home</a></li>
                 <li><a th:href="@{/list}">Message list</a></li>
                 <li><a th:href="@{/add}">Add a new message</a></li>
@@ -43,6 +58,7 @@
                         <h3 th:text="${message.title}"></h3></br>
 						<p th:text="${message.content}"></p></br>
 						<h6 th:text="${message.urlAddress}"></h6>
+                        <h6><a th:href="@{/change}">edit</a></h6>
                     </td>
                 </tr>
 

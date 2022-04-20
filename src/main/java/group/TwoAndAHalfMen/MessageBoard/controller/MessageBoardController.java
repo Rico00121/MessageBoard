@@ -67,4 +67,37 @@ public class MessageBoardController {
 
         return "redirect:/list";
     }
+    @RequestMapping(value="/search", method= RequestMethod.POST)
+    public String search(@RequestParam Map<String,String> allParams){
+        String title=allParams.get("title");
+        String content=allParams.get("content");
+        String sender="";
+        String urlAddress="";
+
+        Message message=new Message(title,content,sender,urlAddress);
+        IDatabase database=new SQLiteDatabase("messageBoard.sqlite");
+        messageList= database.searchMessage(message);
+        database.closeConnection();
+
+        return "redirect:/list";
+
+    }
+    @RequestMapping(value="/change", method= RequestMethod.GET)
+    public String changeForm(){
+        return "change";
+    }
+    @RequestMapping(value="/savechange", method= RequestMethod.POST)
+    public String saveChange(@RequestParam Map<String, String> allParams){
+        String title = allParams.get("title");
+        String content=allParams.get("content");
+        String sender=allParams.get("sender");
+        String urlAddress=allParams.get("urlAddress");
+        Message message = new Message(title, content, sender,urlAddress);
+        // Save message to databse
+        IDatabase database=new SQLiteDatabase("messageBoard.sqlite");
+        messageList= database.changeMessage(message);
+        database.closeConnection();
+
+        return "redirect:/list";
+    }
 }

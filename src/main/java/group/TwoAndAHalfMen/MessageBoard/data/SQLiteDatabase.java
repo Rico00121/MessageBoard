@@ -74,4 +74,39 @@ public class SQLiteDatabase implements IDatabase {
             return null;
         }
     }
+    public List<Message> searchMessage(Message message){
+        String query="SELECT * FROM messages WHERE title LIKE '%"+message.getTitle()+"%' AND content LIKE '%"+message.getContent()+"%'";
+        try {
+            PreparedStatement statement=connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            List<Message> messages = new ArrayList<>();
+            while (resultSet.next()) {
+                Message mes = new Message(resultSet.getString("title"),
+                        resultSet.getString("content"),
+                        resultSet.getString("sender"),
+                        resultSet.getString("urlAddress"));
+                messages.add(mes);
+            }
+            return messages;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
+
+
+    }
+    public List<Message> changeMessage(Message message){
+       String query="UPDATE messages SET title='?', content='?' WHERE sender='?'";
+        try {
+            PreparedStatement statement=connection.prepareStatement(query);
+            statement.setString(1, message.getTitle());
+            statement.setString(2,message.getContent());
+            statement.setString(3,message.getSender());
+            statement.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return readMessage();
+    }
 }

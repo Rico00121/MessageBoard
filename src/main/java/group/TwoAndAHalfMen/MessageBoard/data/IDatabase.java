@@ -8,4 +8,6 @@ public interface IDatabase {
     void addMessage(Message message);
     List<Message> readMessage();
     void  closeConnection();
+    List<Message> searchMessage(Message message);
+    List<Message> changeMessage(Message message);
 }
